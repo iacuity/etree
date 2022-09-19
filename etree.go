@@ -1295,6 +1295,7 @@ func (c *CharData) setIndex(index int) {
 
 // writeTo serializes character data to the writer.
 func (c *CharData) writeTo(w *bufio.Writer, s *WriteSettings) {
+	c.Data = strings.TrimSpace(c.Data)
 	if len(c.Data) > 0 {
 		if true {
 			w.WriteString(`<![CDATA[`)
